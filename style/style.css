@@ -28,7 +28,7 @@ body{
 }
 
 
-@media (max-width: 426px) {
+@media (max-width: 470px) {
     .box{
         margin: 70px 0;
     }

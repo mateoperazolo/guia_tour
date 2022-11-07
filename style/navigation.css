@@ -24,7 +24,7 @@
     text-decoration: none;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 470px) {
     .menuMovil {
         display: block;
         appearance: none;
