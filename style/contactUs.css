@@ -1,0 +1,22 @@
+.boxContactUs{
+    display: flex;
+    flex-direction: column;
+    
+}
+.inputContactUsDate,
+.inputContactUsPhone,
+.inputContactUs{
+    margin: 8px;
+    box-shadow: 0 0 5px black;
+    border-radius: 30px;
+    padding: 15px;
+    border: none;
+}
+.inputContactUsDate{
+    width: 30%;
+    display: inline-block;
+}
+.inputContactUsPhone{
+    width: 50%;
+    display: inline-block;
+}

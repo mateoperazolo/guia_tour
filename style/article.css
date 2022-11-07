@@ -1,0 +1,80 @@
+.boxArticle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.paragraph{
+    width: 65%;
+    text-align: left;
+}
+
+.pictures{
+    width: 100%;
+    padding: 0;
+    height: auto;
+    margin-left: auto;
+    border-radius: 45px;
+    box-shadow: 0 0 5px black;
+}
+
+button:hover{
+    animation: shake 0.15s;
+}
+
+@keyframes shake {
+    0%{
+        transform: rotate(0deg) translateY(0px);
+    }
+    25%{
+        transform: rotate(10deg) translateY(-8px);
+    }
+    50%{
+        transform: rotate(0deg) translateY(0px);
+    }
+    75%{
+        transform: rotate(-10deg) translateY(8px);
+    }
+    100%{
+        transform: rotate(0deg) translateY(0px);
+    }
+}
+
+.like,
+.buttonAddCart{
+    margin: 0px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.buttonPicture{
+    width: 40%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.boxFooter{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+}
+
+.titleName{
+    border-left: 3px solid black;
+}
+
+@media (max-width: 426px) {
+    .boxArticle{
+        flex-direction: column-reverse;
+    } 
+    .paragraph {
+        width: 100%;
+        text-align: center;
+    }
+    .buttonPicture {
+        width: auto;
+    }
+}

@@ -1,0 +1,45 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+}
+
+.menuMovil {
+    display: none;
+}
+
+.menu{
+    background-color: #95b1d4;
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+    box-shadow: 0 0 9px black;
+    margin-left: 13px;
+}
+.navigation a{
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+@media (max-width: 426px) {
+    .menuMovil {
+        display: block;
+        appearance: none;
+        background-color: transparent;
+        outline: none;
+        border: none;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation a {
+        display: none;
+    }
+}
+
