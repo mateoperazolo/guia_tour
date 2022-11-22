@@ -3,6 +3,7 @@
     flex-direction: row;
 }
 
+
 .menuMovil {
     display: none;
 }
@@ -22,6 +23,15 @@
     text-align: center;
     display: inline-block;
     text-decoration: none;
+}
+
+
+.modalLinks{
+    font-size: 1.7rem;
+    text-decoration: none;
+    margin: inherit;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 470px) {
