@@ -117,6 +117,13 @@
                             <button class="next" onclick="plusSlides(1)">&#10095;</button>
                         </div>
                     </div>
+                    <div class="containerDot">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide()"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
                 </div>
             </div>
             
@@ -266,8 +273,14 @@
         const closeBtnMenu = document.getElementById('closeModalMenu')
 
         closeBtnMenu.addEventListener('click', (event) => {
-            menuModal.classList.remove('modalMenu--open')
-            menuContent.classList.remove('modalMenuContent--open')
+            if (
+                event.target.matches(closeBtnMenu) ||
+                !event.target.closest(menuModal))
+            {
+                menuModal.classList.remove('modalMenu--open')
+                menuContent.classList.remove('modalMenuContent--open')
+            }  
+      
         })
         const modalPhotos = document.getElementById('modalArticlePicture')
         const pictureBtn = document.getElementById('buttonPicture')
@@ -279,6 +292,35 @@
         closeBtnPhoto.addEventListener('click', (event) =>{
             modalPhotos.classList.remove('modalPhotos--open')
         })
+
+        let carouselIndex = 1;
+        showCarousel(carouselIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showCarousel(carouselIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showCarousel(carouselIndex = n);
+        }
+
+        function showCarousel(n) {
+          let i;
+          let carousel = document.getElementsByClassName("pictureModal");
+          let dots = document.getElementsByClassName("dot");
+          if (n > carousel.length) {carouselIndex = 1}
+          if (n < 1) {carouselIndex = carousel.length}
+          for (i = 0; i < carousel.length; i++) {
+            carousel[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          carousel[carouselIndex-1].style.display = "block";
+          dots[carouselIndex-1].className += " active";
+        }
     </script>
 </body>
 </html>
