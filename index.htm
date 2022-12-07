@@ -121,7 +121,7 @@
                         <span class="dot" onclick="currentSlide(1)"></span>
                         <span class="dot" onclick="currentSlide(2)"></span>
                         <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide()"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
                         <span class="dot" onclick="currentSlide(5)"></span>
                     </div>
                 </div>
@@ -158,12 +158,46 @@
                     </p>
                 </div>
                 
-                <button class="buttonPicture">
+                <button class="buttonPicture"
+                id="buttonPicture">
                     <img alt="Camboya" 
                     class="pictures"
                     src="pictures/cambodia/53250692_2191585427592826_4563648949415044226_n.jpg">
                 </button>
-            </div>    
+            
+
+                <div class="modalPhotos" id="modalArticlePicture">
+                    <span class="closeModal" id="closeModalPhoto">&times;</span>
+
+                    <div class="modalBody">
+                    <div>
+                        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                    </div>
+                    <div class="modalBigBoxPicture">
+                        <img class="pictureModal" src="pictures/cambodia/53250692_2191585427592826_4563648949415044226_n.jpg">
+
+                        <img class="pictureModal" src="pictures/cambodia/53439422_328541544461913_5416036216140826466_n.jpg">
+
+                        <img class="pictureModal" src="pictures/cambodia/53490958_151166925902601_7413948511853504175_n.jpg">
+
+                        <img class="pictureModal" src="pictures/cambodia/53678534_1043720742483152_7156575648674390582_n.jpg">
+
+                        <img class="pictureModal" src="pictures/cambodia/53028756_1853643444739784_7799104898829109283_n.jpg">
+                    </div>     
+
+                    <div>
+                        
+                        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="containerDot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide()"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
 
             <div class="boxFooter">           
                 <button class="like">
@@ -260,67 +294,8 @@
         </article>
     </section>
    
-    <script>
-        const menuBtn = document.querySelector('.menu .menuMovil')
-        const menuModal = document.querySelector('.modalMenu')
-        const menuContent = document.querySelector('.modalMenuContent')
-
-        menuBtn.addEventListener('click', (event) => {
-            menuModal.classList.add('modalMenu--open')
-            menuContent.classList.add('modalMenuContent--open')
-        })
-
-        const closeBtnMenu = document.getElementById('closeModalMenu')
-
-        closeBtnMenu.addEventListener('click', (event) => {
-            if (
-                event.target.matches(closeBtnMenu) ||
-                !event.target.closest(menuModal))
-            {
-                menuModal.classList.remove('modalMenu--open')
-                menuContent.classList.remove('modalMenuContent--open')
-            }  
-      
-        })
-        const modalPhotos = document.getElementById('modalArticlePicture')
-        const pictureBtn = document.getElementById('buttonPicture')
-        const closeBtnPhoto =document.getElementById('closeModalPhoto')
-
-        pictureBtn.addEventListener('click', (event) =>{
-            modalPhotos.classList.add('modalPhotos--open')
-        })
-        closeBtnPhoto.addEventListener('click', (event) =>{
-            modalPhotos.classList.remove('modalPhotos--open')
-        })
-
-        let carouselIndex = 1;
-        showCarousel(carouselIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-          showCarousel(carouselIndex += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-          showCarousel(carouselIndex = n);
-        }
-
-        function showCarousel(n) {
-          let i;
-          let carousel = document.getElementsByClassName("pictureModal");
-          let dots = document.getElementsByClassName("dot");
-          if (n > carousel.length) {carouselIndex = 1}
-          if (n < 1) {carouselIndex = carousel.length}
-          for (i = 0; i < carousel.length; i++) {
-            carousel[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          carousel[carouselIndex-1].style.display = "block";
-          dots[carouselIndex-1].className += " active";
-        }
+    <script src="js/app.js">
+     
     </script>
 </body>
 </html>
